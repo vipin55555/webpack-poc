@@ -1,0 +1,17 @@
+{
+  "name": "webpack-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-dev": "webpack",
+    "build-prod": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "Vipin sharma",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
