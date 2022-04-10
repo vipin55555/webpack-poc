@@ -4,27 +4,36 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        bundle:path.resolve(__dirname, 'src/index.js')
+        bundle: path.resolve(__dirname, 'src/index.js')
     },
-    output:{
+    output: {
         path: path.resolve(__dirname, 'dist'),
-        filename:'[name][contenthash].js'
+        filename: '[name][contenthash].js'
     },
-    module:{
-        rules:[
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'dist'),
+        },
+        port: 3000,
+        open: true,
+        hot:true,
+        compress: true
+    },
+    module: {
+        rules: [
             {
                 test: /\.scss$/,
-                use:['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
-    plugins:[
+    plugins: [
         new HtmlWebpackPlugin({
-            title:'Webpack POC',
+            title: 'Webpack POC',
             filename: 'index.html',
-            template:'src/template.html',
-            minify:true,
-            clean:true,
+            template: 'src/template.html',
+            minify: true,
+            clean: true,
         })
     ]
 }
