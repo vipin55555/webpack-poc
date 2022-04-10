@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&family=Pacifico&family=Homemade+Apple&family=Rock+Salt&display=swap ');
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'NetflixSansRegular', 'NetflixSansMedium', 'NetflixSansBold', 'NetflixSansLight', 'NetflixSansThin',
+		'NetflixSansBlack', 'NetflixSansIcon', 'SF-Pro-Display';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
