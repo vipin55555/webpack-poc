@@ -1,5 +1,26 @@
+import axios from "axios";
+
 const randomQuotes = () => {
-    return "Why do we fall ? So that we can learn to pick ourself";
+    const options = {
+        method: 'GET',
+        url: 'https://icanhazdadjoke.com',
+        headers: {
+            Accept: 'application/json'
+        }
+    };
+
+    var quoteTag = document.getElementById('quote-content');
+
+    axios.request(options).then((response) => {
+        if (response?.data?.joke) {
+            quoteTag.innerText = response.data.joke;
+        } else {
+            quoteTag.innerText = 'Quote not found';
+        }
+    }).catch(() => {
+        quoteTag.innerText = 'Quote not found';
+    });
+
 }
 
 export { randomQuotes };
